@@ -10,5 +10,10 @@ public class forLoop {
             if(i % 2 ==0 ) continue;
             System.out.println(i);
         }
+
+        //10 9 .... 3
+        for(int i= 10; i>=3; i--){ // i-- = i = i-1
+            System.out.println("Value :" + i);
+        }
     }
 }
