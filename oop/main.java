@@ -14,9 +14,15 @@ public class main {
 //        demo1.header();
 //        demo1.output();
 
-        Brand brand1 = new Brand();
-        brand1.input();
-        brand1.header();
-        brand1.output();
+//        Brand brand1 = new Brand();
+//        brand1.input();
+//        brand1.header();
+//        brand1.output();
+
+        Product p = new Product();
+        p.input();
+        p.header();
+        p.output();
+
     }
 }
