@@ -18,7 +18,6 @@ public class Product {
         System.out.print("Enter product price = "); price = input.nextDouble();
         System.out.print("Enter product qty = "); qty = input.nextInt(); input.nextLine();
         System.out.print("Enter product desc = "); desc = input.nextLine();
-
     }
 
     public  void header () {
