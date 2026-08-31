@@ -1,0 +1,22 @@
+ ======== Homework ==========
+1.Encapsulation setters & getters & test with object
+    -Product
+        private int id;
+        private String name;
+        private double price;
+2.Constructor
+    - create 3 Constructor type (default, constructor with params, Copy)
+    -Brand
+        private int id;
+        private String name;
+        private String code;
+        private String description;
+        private String fromCountry;
+3.Array
+    -create array int with 4 values, assign and output all with values (for, foreach)
+    -create array String with 5 values, assign and output all with values (for, foreach)
+    +create array object with 3 values, assign and output all with values (for, foreach)
+        +Student :
+            -String name;
+            -int age
+            -String class;

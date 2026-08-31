@@ -5,7 +5,7 @@ public class CategoryEncapulation {
     private String name;
     private  String desc;
 
-    //constructor with params
+    //constructor
     public CategoryEncapulation(int id, String name, String desc){
         this.id = id;
         this.name = name;

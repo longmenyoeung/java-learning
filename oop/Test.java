@@ -6,7 +6,7 @@ class Test {
     private int x; //access modifer private, protect, public
     private  int y;
 
-    //method menmbers input/output
+    //method members input/output
     public void input() {
         Scanner input = new Scanner(System.in);
         System.out.println("Input information");

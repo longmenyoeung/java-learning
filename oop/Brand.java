@@ -4,10 +4,8 @@ import java.util.Scanner;
 
 public class Brand {
     int id;
-    String name;
+    String name, desc, fromCountry;
     int code ;
-    String desc;
-    String fromCountry;
 
 
     public void input() {

@@ -1,7 +1,7 @@
 package LessonJava.oop;
 
 //Class Test
-public class main {
+public class Main {
     public static void main(String[] args) {
         //Create obj from class
 //        Test test1 = new Test();
@@ -34,7 +34,12 @@ public class main {
         System.out.println("Category desc :" + cate1.getDesc());
 
         //Obj two
-//        System.out.println("Category name :" + cate2.getName());
+        System.out.println("Category name :" + cate2.getName());
+
+
+        //Call default constructor
+//        defaultConstructor dfc = new defaultConstructor();
+//        dfc.output();
 
 
     }
