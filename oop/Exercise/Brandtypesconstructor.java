@@ -15,6 +15,14 @@ public class Brandtypesconstructor {
         this.fromCountry =fromCountry;
     }
 
+    //constructor copy
+    public Brandtypesconstructor(Brandtypesconstructor copy){
+        this.id = copy.id;
+        this.name = copy.name;
+        this.code = copy.code;
+        this.fromCountry = copy.fromCountry;
+    }
+
 
     //defaults constructor
     public Brandtypesconstructor(){

@@ -48,6 +48,8 @@ public class Main {
         //---------------- Constructor with params ----------------------
         Brandtypesconstructor bts1  = new Brandtypesconstructor(1, "men", "code", "cambodia");
         bts1.output();
-
+        //----------------------constructor copy--------------------
+        Brandtypesconstructor btsCopy = new Brandtypesconstructor(bts1);
+        btsCopy.output();
     }
 }
