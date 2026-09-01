@@ -41,5 +41,10 @@ public class Main {
             student.display();
         }
 
+
+        //---------------- Constructor Default ----------------------
+        Brandtypesconstructor bts = new Brandtypesconstructor();
+        bts.output();
+
     }
 }
