@@ -45,6 +45,9 @@ public class Main {
         //---------------- Constructor Default ----------------------
         Brandtypesconstructor bts = new Brandtypesconstructor();
         bts.output();
+        //---------------- Constructor with params ----------------------
+        Brandtypesconstructor bts1  = new Brandtypesconstructor(1, "men", "code", "cambodia");
+        bts1.output();
 
     }
 }
