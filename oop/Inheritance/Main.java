@@ -14,5 +14,10 @@ public class Main {
         objB.methodB();
         System.out.println("Sum :" + objB.sum());
 
+        ClassC objC= new ClassC();
+        objC.methodA();
+
+
+
     }
 }

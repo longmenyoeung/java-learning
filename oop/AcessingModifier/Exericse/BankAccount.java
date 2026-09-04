@@ -1,4 +1,5 @@
 package LessonJava.oop.AcessingModifier.Exericse;
 
-public class BankAccount {
+class BankAccount {
+
 }
