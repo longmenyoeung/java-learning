@@ -1,4 +1,6 @@
 package LessonJava.oop.Interface;
 
-public class UserInterface {
+interface  UserInterface {
+    void email();
+    void password();
 }
