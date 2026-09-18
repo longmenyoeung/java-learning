@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Staff[] staffs = new Staff[500]; //object arr fix size
-        int n= 0, i, option, optionUpdate;
+        int n = 0, i, option, optionUpdate;
         double idSearch;
-        do{
+        do {
             System.out.println("======= Menu ==========");
             System.out.println("1. Input Staff");
             System.out.println("2. Show all staff");
@@ -17,27 +17,30 @@ public class Main {
             System.out.println("5. Exit");
             System.out.println("========================");
 
-            System.out.print("Input your choice (1-5) : "); option = input.nextInt();
+            System.out.print("Input your choice (1-5) : ");
+            option = input.nextInt();
 
-            switch (option){
-                case 1 :
+            switch (option) {
+                case 1:
                     staffs[n] = new Staff();
+                    System.out.println("============= Input staff information ==============");
                     staffs[n].input();
-                    n ++;
+                    n++;
                     break;
-                case 2 :
+                case 2:
                     System.out.println(" ========== LIST ALL STAFF ============");
                     Staff.headers();
-                    for(i = 0; i<n; i++){
+                    for (i = 0; i < n; i++) {
                         staffs[i].display();
                     }
                     break;
-                case 3 :
+                case 3:
                     System.out.println(" ============ SEARCH STAFF INFO =========");
-                    System.out.print("Please input staff to search ID : "); idSearch = input.nextDouble();
+                    System.out.print("Please input staff to search ID : ");
+                    idSearch = input.nextDouble();
                     int isFound = 0;
-                    for(i = 0; i< n; i++){
-                        if(staffs[i].getId() == idSearch){
+                    for (i = 0; i < n; i++) {
+                        if (staffs[i].getId() == idSearch) {
                             System.out.println("Staff id have been found!");
                             Staff.headers();
                             staffs[i].display();
@@ -46,91 +49,90 @@ public class Main {
                         }
                     }
 
-                    if(isFound == 0){
+                    if (isFound == 0) {
                         System.out.println("No found in list!");
                     }
                     break;
 
-                case  4 :
+                case 4:
                     System.out.println("============== UPDATE STAFF DATA ================");
-                    System.out.print("Input staff ID you want to search :"); int searchId = input.nextInt();
+                    System.out.print("Input staff ID you want to search :");
+                    int searchId = input.nextInt();
                     int isfoundId = 0;
-                   for(i = 0; i<n; i++){
-                       if(staffs[i].getId() == searchId){
-                           do {
-                               System.out.println("======= MENU UPDATE ==========");
-                               System.out.println("1. BY FIRST NAME");
-                               System.out.println("2. BY LAST NAME ");
-                               System.out.println("3. BY GENDER");
-                               System.out.println("4. BY EMAIL");
-                               System.out.println("5. BY PHONE");
-                               System.out.println("6. BY SALARY");
-                               System.out.println("7. BY ADDRESS");
-                               System.out.println("8. BACK");
-                               System.out.println("========================");
-                               System.out.print("Input your choice (1-8) :"); optionUpdate = input.nextInt();
+                    for (i = 0; i < n; i++) {
+                        if (staffs[i].getId() == searchId) {
+                            System.out.println("============ CURRENT DATA ================");
+                            Staff.headers();
+                            staffs[i].display();
+                            do {
+                                System.out.println("======= MENU UPDATE ==========");
+                                System.out.println("1. BY FIRST NAME");
+                                System.out.println("2. BY LAST NAME ");
+                                System.out.println("3. BY GENDER");
+                                System.out.println("4. BY EMAIL");
+                                System.out.println("5. BY PHONE");
+                                System.out.println("6. BY SALARY");
+                                System.out.println("7. BY ADDRESS");
+                                System.out.println("8. BACK");
+                                System.out.println("========================");
+                                System.out.print("Input your choice (1-8) :");
+                                optionUpdate = input.nextInt();
+                                input.nextLine();
 
-                               String firstname;String lastname; String gender;String phone;String email;String address;
-                               double salary;
-                               switch (optionUpdate){
-                                   case 1:
-                                       System.out.print("New firstname :"); firstname = input.nextLine();
-                                       staffs[i].setFirstName(firstname);
-                                       break;
-                                   case 2:
-                                       System.out.print("New lastname :"); lastname = input.nextLine();
-                                       staffs[i].setLastName(lastname);
-                                       break;
-                                   case 3:
-                                       System.out.print("New gender :"); gender = input.nextLine();
-                                       staffs[i].setGender(gender);
-                                       break;
-                                   case 4:
-                                       System.out.print("New phone :"); phone = input.nextLine();
-                                       staffs[i].setPhone(phone);
-                                       break;
-                                   case 5:
-                                       System.out.print("New salary :"); salary = input.nextDouble();
-                                       staffs[i].setSalary(salary);
-                                       break;
-                                   case 6:
-                                       System.out.print("New email:"); email = input.nextLine();
-                                       staffs[i].setEmail(email);
-                                       break;
-                                   case 7:
-                                       System.out.print("New address :"); address =input.nextLine();
-                                       staffs[i].setAddress(address);
-                                       break;
-                               }
+                                String firstname;
+                                String lastname;
+                                String gender;
+                                String phone;
+                                String email;
+                                String address;
 
-                           }while (optionUpdate != 8);
-                           isfoundId = 1;
-                           break;
-                       }
-                   }
-                   if(isfoundId == 0){
-                       System.out.println("Not staff found in list.");
-                   }
-                   break;
+                                double salary;
+                                switch (optionUpdate) {
+                                    case 1:
+                                        System.out.print("New firstname: ");
+                                        staffs[i].setFirstName(input.nextLine());
+                                        break;
+                                    case 2:
+                                        System.out.print("New lastname: ");
+                                        staffs[i].setLastName(input.nextLine());
+                                        break;
+                                    case 3:
+                                        System.out.print("New gender: ");
+                                        staffs[i].setGender(input.nextLine());
+                                        break;
+                                    case 4:
+                                        System.out.print("New email: ");
+                                        staffs[i].setEmail(input.nextLine());
+                                        break;
+                                    case 5:
+                                        System.out.print("New phone: ");
+                                        staffs[i].setPhone(input.nextLine());
+                                        break;
+                                    case 6:
+                                        System.out.print("New salary: ");
+                                        salary = input.nextDouble();
+                                        staffs[i].setSalary(salary);
+                                        input.nextLine();
+                                        break;
+                                    case 7:
+                                        System.out.print("New address: ");
+                                        staffs[i].setAddress(input.nextLine());
+                                        break;
+
+                                }
+
+                            } while (optionUpdate != 8);
+                            isfoundId = 1;
+                            break;
+                        }
+                    }
+                    if (isfoundId == 0) {
+                        System.out.println("Not staff found in list.");
+                    }
+                    break;
             }
-        }while(option != 5);
+        } while (option != 5);
 
 
-
-
-//        System.out.print("Input number of staff :"); n = input.nextInt();
-        //input staff
-//        System.out.println(" =========== Input information of Staff ============");
-//        for(i =0; i<n; i++){
-//            System.out.println("Index of staff :["+i+"] :");
-//            staffs[i] = new Staff();
-//            staffs[i].input();
-//        }
-
-        //display all staff
-//        Staff.headers();
-//        for(i=0; i<n; i++){
-//            staffs[i].display();
-//        }
     }
 }
