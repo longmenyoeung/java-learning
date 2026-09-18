@@ -8,16 +8,28 @@ public class Main {
         Staff[] staffs = new Staff[500]; //object arr fix size
         int n = 0, i, option, optionUpdate;
         double idSearch;
+
+        //init data
+        for(i=0; i<5; i++){
+            staffs[i] = new Staff(1+i,"First"+i, "Last"+i, "MALE"+i, "9999"+i, "usr@mgil.com"+i,444+i, "m26-bonglang"+i );
+            n++;
+        }
+
+        //end init data
+
+
         do {
             System.out.println("======= Menu ==========");
             System.out.println("1. Input Staff");
             System.out.println("2. Show all staff");
             System.out.println("3. Search staff by ID");
             System.out.println("4. Update staff by ID");
-            System.out.println("5. Exit");
+            System.out.println("5. Delete staff by ID");
+            System.out.println("6. Sorted staff by price");
+            System.out.println("7. Exit");
             System.out.println("========================");
 
-            System.out.print("Input your choice (1-5) : ");
+            System.out.print("Input your choice (1-6) : ");
             option = input.nextInt();
 
             switch (option) {
@@ -79,12 +91,6 @@ public class Main {
                                 optionUpdate = input.nextInt();
                                 input.nextLine();
 
-                                String firstname;
-                                String lastname;
-                                String gender;
-                                String phone;
-                                String email;
-                                String address;
 
                                 double salary;
                                 switch (optionUpdate) {
@@ -130,9 +136,49 @@ public class Main {
                         System.out.println("Not staff found in list.");
                     }
                     break;
-            }
-        } while (option != 5);
 
+                case 5 :
+                    System.out.println("============== DELETE STAFF DATA ================");
+                    System.out.print("Input staff ID you want to search :"); idSearch = input.nextInt();
+                    int isfound = 0;
+
+                    for(i =0; i<n ;i++){
+                        if(staffs[i].getId() == idSearch){
+                            //start process delete
+                            for(int j = i ; j<n; j++){
+                                staffs[j] = staffs[j+1];
+                            }
+                            n--;
+                            System.out.println("Deleted data successfully!.");
+
+                            //end process
+                            isfound = 1;
+                            break;
+                        }
+                    }
+
+                    if(isfound == 0){
+                        System.out.println("Not staff found in list.");
+                    }
+
+                    break;
+
+                case  6 :
+                    Staff stafftpm = new Staff();
+                    for(i=0; i < n -1; i++){
+                        for(int j = i + 1; j< n; j++){
+                            if(staffs[i].getSalary() < staffs[j].getSalary()){
+                                stafftpm = staffs[i];
+                                staffs[i] = staffs[j];
+                                staffs[j] = stafftpm;
+                            }
+                        }
+
+                    }
+                    System.out.println("Sorted successfully.");
+                    break;
+            }
+        } while (option != 7);
 
     }
 }
