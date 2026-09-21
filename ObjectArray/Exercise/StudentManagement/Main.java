@@ -15,6 +15,7 @@ public class Main {
             System.out.println("1. Input student information ");
             System.out.println("2. Show all students list");
             System.out.println("3. Find highest score");
+            System.out.println("4. Find student by ID : ");
 
 
             //choose options
@@ -48,10 +49,31 @@ public class Main {
                     }
                     System.out.println("Sorted successfully.");
                     break;
-                case 4: break;
-                case 5: break;
+                case 4:
+                    int isFound = 0;
+                    System.out.print("Input student ID : "); int isSearch = input.nextInt();
+                    input.nextLine();
+
+                    for(i=0; i< n; i++){
+                        if(students[i].getId() == isSearch){
+                            System.out.println("Student have been found.");
+                            students[i].display();
+                            isFound  =1;
+                            break;
+                        }
+                    }
+
+                    if(isFound == 0){
+                        System.out.println("No data found.");
+                    }
+
+                    break;
+                case 5:
+
+                    break;
+                case 6: break;
             }
-        }while (options !=6);
+        }while (options !=7);
 
 
     }
