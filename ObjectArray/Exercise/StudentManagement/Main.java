@@ -14,6 +14,7 @@ public class Main {
             System.out.println(" =============== Student Manu =================");
             System.out.println("1. Input student information ");
             System.out.println("2. Show all students list");
+            System.out.println("3. Find highest score");
 
 
             //choose options
@@ -23,7 +24,6 @@ public class Main {
             switch (options){
                 case 1:
                     students[n] = new Student();
-                    System.out.println(" ============= INPUT STUDENT INFORMATION ============");
                     students[n].input();
                     n++;
                     break;
@@ -34,7 +34,20 @@ public class Main {
                         students[i].display();
                     }
                     break;
-                case 3: break;
+                case 3:
+                    System.out.println("=========== SORT LIST STUDENT ===============");
+                    Student studentTmp = new Student();
+                    for(i=0; i< n - 1; i++){
+                        for (int j = i + 1; j < n; j++){
+                            if(students[i].getScore() < students[j].getScore()){
+                                studentTmp = students[i];
+                                students[i] = students[j];
+                                students[j] = studentTmp;
+                            }
+                        }
+                    }
+                    System.out.println("Sorted successfully.");
+                    break;
                 case 4: break;
                 case 5: break;
             }
