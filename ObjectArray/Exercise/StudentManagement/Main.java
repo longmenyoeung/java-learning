@@ -16,6 +16,7 @@ public class Main {
             System.out.println("2. Show all students list");
             System.out.println("3. Find highest score");
             System.out.println("4. Find student by ID : ");
+            System.out.println("5. Sort student by ID : ");
 
 
             //choose options
@@ -26,6 +27,7 @@ public class Main {
                 case 1:
                     students[n] = new Student();
                     students[n].input();
+
                     n++;
                     break;
                 case 2:
@@ -36,7 +38,7 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.println("=========== SORT LIST STUDENT ===============");
+                    System.out.println("=========== SORT LIST STUDENT WITH HIGHEST SCORE ===============");
                     Student studentTmp = new Student();
                     for(i=0; i< n - 1; i++){
                         for (int j = i + 1; j < n; j++){
@@ -66,12 +68,24 @@ public class Main {
                     if(isFound == 0){
                         System.out.println("No data found.");
                     }
-
                     break;
                 case 5:
+                    System.out.println("================ SORT STUDENT BY ID ===============");
+                    Student studentTmps = new Student();
+                    for(i=0; i<n - 1; i++){
+                        for(int j= i + 1; j <n; j++){
+                            if (students[i].getId() > students[j].getId()){
+                                studentTmps = students[i];
+                                students[i] = students[j];
+                                students[j] = studentTmps;
+                            }
+                        }
+                    }
+                    System.out.println("Sorted id successfully.");
+                    break;
+                case 6:
 
                     break;
-                case 6: break;
             }
         }while (options !=7);
 
