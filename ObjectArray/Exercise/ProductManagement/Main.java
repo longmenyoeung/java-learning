@@ -8,6 +8,7 @@ public class Main {
         Product [] products = new Product[20];
         int n = 0, i, option, isSearch;
         Boolean isFound = false;
+        String isSearchName;
 
         do{
 
@@ -17,8 +18,9 @@ public class Main {
             System.out.println("3. Search product by id.");
             System.out.println("4. Update product.");
             System.out.println("5. Remove product.");
+            System.out.println("6. Search product by name.");
 
-            System.out.print("Enter your option (1-5) : "); option = input.nextInt(); input.nextLine();
+            System.out.print("Enter your option (1-6) : "); option = input.nextInt(); input.nextLine();
             switch (option){
                 case 1 :
                     products[n] = new Product();
@@ -118,10 +120,25 @@ public class Main {
                         System.out.println("Product not found.");
                     }
                     break;
-                case 6 : break;
+                case 6 :
+                    System.out.print("Input name search :"); isSearchName = input.nextLine();
+                    Product.headers();
+                    for(i=0; i< n; i++){
+                        if(products[i].getName().toLowerCase().equals(isSearchName)){
+                            products[i].display();
+                            isFound = true;
+                            break;
+                        }
+                    }
+                    if(isFound == false){
+                        System.out.println("Product not found.");
+                    }
+                    break;
+                case 7 :
+                    break;
             }
 
-        }while ( option != 7);
+        }while ( option != 8);
 
     }
 }
