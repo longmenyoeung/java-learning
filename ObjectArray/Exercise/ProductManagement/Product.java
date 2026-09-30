@@ -28,7 +28,7 @@ class Product {
     }
 
     // display output of product
-    public void headers(){
+    static public void headers(){
         System.out.printf("%10s %10s %10s %10s \n", "ID", "NAME", "PRICE", "QTY");
     }
 
