@@ -9,8 +9,6 @@ public class Main {
         int n = 0, i, option, isSearch;
         Boolean isFound = false;
 
-
-
         do{
 
             System.out.println(" ============== Menu ============");
@@ -18,8 +16,9 @@ public class Main {
             System.out.println("2. View All Products.");
             System.out.println("3. Search product by id.");
             System.out.println("4. Update product.");
+            System.out.println("5. Remove product.");
 
-            System.out.print("Enter your option (1-4) : "); option = input.nextInt(); input.nextLine();
+            System.out.print("Enter your option (1-5) : "); option = input.nextInt(); input.nextLine();
             switch (option){
                 case 1 :
                     products[n] = new Product();
@@ -69,7 +68,7 @@ public class Main {
                                 System.out.println("3. By product qty");
                                 System.out.println("4. Back");
 
-                                System.out.print("Enter option :"); option = input.nextInt(); input.nextLine();
+                                System.out.print("Enter option (1-4) :"); option = input.nextInt(); input.nextLine();
                                 switch (option){
                                     case 1 :
                                         System.out.print("New product name :"); String newName = input.nextLine();
@@ -100,10 +99,29 @@ public class Main {
                         System.out.println("Product not found.");
                     }
                     break;
-                case 5 : break;
+                case 5 :
+                    System.out.print("Input search id :"); isSearch = input.nextInt(); input.nextLine();
+                    for(i = 0 ; i < n; i++){
+                        if(products[i].getId() == isSearch){
+                            //process delete
+                            for(int j = i; j < n; j++){
+                                products[j] = products[j + 1];
+                            }
+                            n--;
+                            System.out.println("Product name " + products[i].getName() +  " deleted.");
+                            isFound = true;
+                            break;
+                        }
+                    }
+
+                    if(isFound == false){
+                        System.out.println("Product not found.");
+                    }
+                    break;
+                case 6 : break;
             }
 
-        }while ( option != 6);
+        }while ( option != 7);
 
     }
 }
