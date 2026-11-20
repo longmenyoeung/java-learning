@@ -25,13 +25,16 @@ public class Main {
         Employee[] employees = {
                 new Developer("Java", 5, 1, "men", "men@gmail.com", 2000),
                 new Developer("Java", 2, 2, "mena", "m@gmail.com", 2000),
-                new Designer("Figma", 3,3,"kiki", "kikik@gmail.com", 2300)
+                new Designer("Figma", 3,3,"kiki", "kikik@gmail.com", 2300),
+                new Developer("Csharp", 5, 8,"men", "meme@mgil.com", 4000)
         };
+
 
 
         for(Employee employee : employees){
             employee.display();
         }
+
 
     }
 }

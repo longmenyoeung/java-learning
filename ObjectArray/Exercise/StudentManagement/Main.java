@@ -88,8 +88,5 @@ public class Main {
                     break;
             }
         }while (options !=7);
-
-
     }
-
 }

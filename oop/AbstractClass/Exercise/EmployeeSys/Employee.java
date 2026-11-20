@@ -10,6 +10,7 @@ public abstract class Employee {
         this.age = age;
     }
 
+
     //Abstract method
     public  abstract double calculateSalary();
 

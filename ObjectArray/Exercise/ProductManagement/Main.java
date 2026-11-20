@@ -19,8 +19,9 @@ public class Main {
             System.out.println("4. Update product.");
             System.out.println("5. Remove product.");
             System.out.println("6. Search product by name.");
+            System.out.println("7. View total price of all products.");
 
-            System.out.print("Enter your option (1-6) : "); option = input.nextInt(); input.nextLine();
+            System.out.print("Enter your option (1-7) : "); option = input.nextInt(); input.nextLine();
             switch (option){
                 case 1 :
                     products[n] = new Product();
@@ -135,10 +136,12 @@ public class Main {
                     }
                     break;
                 case 7 :
+
                     break;
+                case 8: break;
             }
 
-        }while ( option != 8);
+        }while ( option != 9);
 
     }
 }

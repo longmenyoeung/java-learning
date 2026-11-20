@@ -49,6 +49,9 @@ class Product {
     public void setPrice(double price){this.price= price;}
     public void setQty(int qty){this.qty = qty;}
 
-    
+    //calculate totalPrice
+    public double calculateTotalPrice (double price, int qty){
+        return price * qty;
+    }
 
 }
