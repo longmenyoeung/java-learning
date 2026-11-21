@@ -58,7 +58,5 @@ public class Main {
 
         System.out.println("Top scorer is " + topScorer.getName() + " Score :" + topScorer.getScore());
 
-
-
     }
 }
