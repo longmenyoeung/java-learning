@@ -31,6 +31,7 @@ public class EmployeeMain {
                     System.out.print("Enter Name: ");
                     String name = sc.nextLine();
                     System.out.print("Enter department: ");
+                    
                     String department = sc.nextLine();
                     System.out.print("Enter salary: ");
                     double salary = sc.nextDouble();
@@ -42,6 +43,9 @@ public class EmployeeMain {
                     break;
                 case 2:
                     System.out.println("Show data successfully.");
+                    //សាកល្បងស្រាវជ្រាវវិធី Sort ដោយប្រើ Comparator (Lambda expression):
+                    // តម្រៀបទំនិញពីតម្លៃទាប ទៅ ខ្ពស់
+                    employees.sort((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary()));
                     for (Employee emp : employees) {
                         emp.display();
                     }
@@ -116,10 +120,16 @@ public class EmployeeMain {
                                         System.out.println("Name updated");
                                         break;
                                     case 2:
-                                        
+                                        System.out.println("Enter new department : ");
+                                        String newDepartment  = sc.nextLine();
+                                        employees.get(i).setDepartment(newDepartment);
+                                        System.out.println("Department updated");
                                         break;
                                     case 3:
-                                        
+                                        System.out.println("Enter new salary : ");
+                                        double newSalary = sc.nextDouble();
+                                        employees.get(i).setSalary(newSalary);
+                                        System.out.println("Salary updated");
                                         break;
                                     default:
                                         System.out.println("Invalid options !.");
