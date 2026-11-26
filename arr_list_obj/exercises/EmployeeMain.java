@@ -24,7 +24,7 @@ public class EmployeeMain {
             int option = sc.nextInt();
 
             switch (option) {
-                case 1:
+                case 1 -> {
                     System.out.print("Enter ID: ");
                     int id = sc.nextInt();
                     sc.nextLine();
@@ -39,9 +39,8 @@ public class EmployeeMain {
                     employees.add(new Employee(id, name, department, salary));
 
                     System.out.println("Added successfully.");
-
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.println("Show data successfully.");
                     //សាកល្បងស្រាវជ្រាវវិធី Sort ដោយប្រើ Comparator (Lambda expression):
                     // តម្រៀបទំនិញពីតម្លៃទាប ទៅ ខ្ពស់
@@ -49,8 +48,8 @@ public class EmployeeMain {
                     for (Employee emp : employees) {
                         emp.display();
                     }
-                    break;
-                case  3 :
+                }
+                case  3 -> {
                     System.out.println(" ============ Filter by department ==========");
                     sc.nextLine();
                     System.out.print("Search to filter in department :"); 
@@ -65,14 +64,13 @@ public class EmployeeMain {
                         }
 
                     }
-
-
+                    
+                    
                     if(!isFound){
                         System.out.println("Employee department not found.");
                     }
-
-                    break;
-                case 4 :
+                }
+                case 4 -> {
                     System.out.println(" ============= Remove data ===========");
                     System.out.print("Enter search ID :"); 
                     int deleted = sc.nextInt();
@@ -89,8 +87,8 @@ public class EmployeeMain {
                     if(!isFound){
                         System.out.println("Employee id not found.");
                     }
-                break;
-                case 5:
+                }
+                case 5 -> {
                     System.out.println(" ============= Update data ===========");
                     System.out.print("Enter search ID :"); int searchId = sc.nextInt();
 
@@ -113,26 +111,25 @@ public class EmployeeMain {
                                 sc.nextLine();
 
                                 switch (choice) {
-                                    case 1:
+                                    case 1 -> {
                                         System.out.print("Enter new name : "); 
                                         String newName = sc.nextLine().trim();
                                         employees.get(i).setName(newName);
                                         System.out.println("Name updated");
-                                        break;
-                                    case 2:
+                                    }
+                                    case 2 -> {
                                         System.out.println("Enter new department : ");
                                         String newDepartment  = sc.nextLine();
                                         employees.get(i).setDepartment(newDepartment);
                                         System.out.println("Department updated");
-                                        break;
-                                    case 3:
+                                    }
+                                    case 3 -> {
                                         System.out.println("Enter new salary : ");
                                         double newSalary = sc.nextDouble();
                                         employees.get(i).setSalary(newSalary);
                                         System.out.println("Salary updated");
-                                        break;
-                                    default:
-                                        System.out.println("Invalid options !.");
+                                    }
+                                    default -> System.out.println("Invalid options !.");
                                 }
                             } while (choice !=4);
                             
@@ -143,14 +140,12 @@ public class EmployeeMain {
                     if(!isFound){
                         System.out.println("Employee is not found.");
                     }
-
-                    break;
-                case 6:
+                }
+                case 6 -> {
                     System.out.println("Closed application successfully.");
                     running = false;
-                    break;
-                default:
-                    System.out.println("Invalid option !.");
+                }
+                default -> System.out.println("Invalid option !.");
             }
 
         }
